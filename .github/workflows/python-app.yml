@@ -16,6 +16,11 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
+      - name: ansible check with ubuntu:latest
+      # replace "master" with any valid ref
+        uses: roles-ansible/check-ansible-ubuntu-latest-action@master
+        with:
+            targets: "./"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
